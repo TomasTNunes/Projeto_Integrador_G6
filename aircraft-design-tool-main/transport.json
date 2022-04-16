@@ -185,7 +185,7 @@
                 "type": "cruise",
                 "energy_network": "Fuel Energy Network @ cruise",
                 "velocity": 80.0,
-                "range": 100.0,
+                "range": 200000.0,
                 "altitude": 460.0
             },
             {
@@ -217,12 +217,12 @@
             {
                 "name": "Crew",
                 "type": "mass.point",
-                "mass": 200
+                "mass": 240
             },
             {
                 "name": "Passengers",
                 "type": "mass.point",
-                "mass": 500
+                "mass": 120
             },
             {
                 "name": "Avionics",
@@ -232,15 +232,15 @@
             {
                 "name": "Payload Bay",
                 "type": "mass.point",
-                "mass": 10
+                "mass": 40
             },
             {
                 "name": "Fuselage",
                 "type": "fuselage",
                 "interf_factor": 1.0,
-                "diameter": 1.0,
-                "length": 4.0,
-                "mass": 800
+                "diameter": 3.0,
+                "length": 7.0,
+                "mass": 1500
             },
             {
                 "name": "Main Wing",
@@ -259,7 +259,7 @@
                 "sweep_le": 10.0,
                 "sweep_c4": 15.0,
                 "sweep_tc_max": 20.0,
-                "mass": 200
+                "mass": 250
             },
             {
                 "name": "Horizontal Tail",
@@ -325,7 +325,7 @@
                 "specific_energy": 360000.0,
                 "efficiency": 0.9,
                 "reserve": 0.2,
-                "mass": 0
+                "mass": 100
             },
             {
                 "name": "Fuel Tank",
@@ -336,7 +336,7 @@
             {
                 "name": "Rotor",
                 "type": "driver.rotor.main",
-                "number": 2,
+                "number": 6,
                 "number_blades": 5,
                 "radius": 2,
                 "rotor_solidity": 0.08,
@@ -349,8 +349,8 @@
             {
                 "name": "Propeller",
                 "type": "driver.rotor",
-                "number": 2,
-                "number_blades": 4,
+                "number": 6,
+                "number_blades": 5,
                 "radius": 2.3,
                 "tip_velocity": 240.1,
                 "efficiency": 0.6,
@@ -371,7 +371,7 @@
             {
                 "name": "Electric Motor",
                 "type": "engine.prop",
-                "number": 3,
+                "number": 6,
                 "efficiency": 0.97,
                 "mass": 50,
                 "max_power": 200000
