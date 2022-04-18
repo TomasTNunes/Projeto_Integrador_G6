@@ -240,7 +240,7 @@
                 "interf_factor": 1.0,
                 "diameter": 3.0,
                 "length": 7.0,
-                "mass": 1500
+                "mass": 1000
             },
             {
                 "name": "Main Wing",
@@ -374,7 +374,7 @@
                 "number": 6,
                 "efficiency": 0.97,
                 "mass": 50,
-                "max_power": 200000
+                "max_power": 1000000
             }
         ]
     },
