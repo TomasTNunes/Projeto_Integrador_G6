@@ -246,8 +246,8 @@
                 "name": "Main Wing",
                 "type": "wing.main",
                 "interf_factor": 1.0,
-                "aspect_ratio": 7.0,
-                "mean_chord": 2.0,
+                "aspect_ratio": 6,
+                "mean_chord": 2.5,
                 "oswald_efficiency": 0.85,
                 "airfoil": {
                     "type": "naca0012",
@@ -406,7 +406,7 @@
                     },
                     {
                         "name": "4-stroke Piston Engine",
-                        "brake_specific_fuel_consumption": 2.55e-5
+                        "brake_specific_fuel_consumption": 3.25e-5
                     },
                     {
                         "name": "Gearbox"
