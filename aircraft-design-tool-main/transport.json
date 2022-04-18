@@ -222,7 +222,7 @@
             {
                 "name": "Passengers",
                 "type": "mass.point",
-                "mass": 120
+                "mass": 100
             },
             {
                 "name": "Avionics",
@@ -240,26 +240,26 @@
                 "interf_factor": 1.0,
                 "diameter": 3.0,
                 "length": 7.0,
-                "mass": 1000
+                "mass": 1500
             },
             {
                 "name": "Main Wing",
                 "type": "wing.main",
                 "interf_factor": 1.0,
                 "aspect_ratio": 7.0,
-                "mean_chord": 3.0,
+                "mean_chord": 2.0,
                 "oswald_efficiency": 0.85,
                 "airfoil": {
                     "type": "naca0012",
                     "tc_max": 0.15,
                     "xc_max": 0.3,
                     "lift_slope_coefficient": 6.2,
-                    "cl_max": 2.0
+                    "cl_max": 3.0
                 },
                 "sweep_le": 10.0,
                 "sweep_c4": 15.0,
                 "sweep_tc_max": 20.0,
-                "mass": 250
+                "mass": 200
             },
             {
                 "name": "Horizontal Tail",
@@ -285,7 +285,7 @@
                 "type": "wing.vtail",
                 "interf_factor": 1.0,
                 "aspect_ratio": 5.0,
-                "mean_chord": 1.0,
+                "mean_chord": 0.5,
                 "oswald_efficiency": 0.85,
                 "airfoil": {
                     "type": "naca0012",
@@ -309,15 +309,15 @@
             {
                 "name": "4-stroke Piston Engine",
                 "type": "engine.prop",
-                "efficiency": 0.8,
+                "efficiency": 0.9,
                 "mass": 100,
-                "max_power": 200000
+                "max_power": 600000
             },
             {
                 "name": "Jet Engine",
                 "type": "engine.jet",
                 "mass": 200,
-                "max_power": 120000
+                "max_power": 1200000
             },
             {
                 "name": "Battery",
@@ -337,23 +337,23 @@
                 "name": "Rotor",
                 "type": "driver.rotor.main",
                 "number": 6,
-                "number_blades": 5,
-                "radius": 2,
+                "number_blades": 6,
+                "radius": 2.5,
                 "rotor_solidity": 0.08,
                 "induced_power_factor": 1.15,
                 "base_drag_coefficient": 0.02,
                 "tip_velocity": 240.1,
-                "efficiency": 0.6,
-                "mass": 20
+                "efficiency": 0.8,
+                "mass": 10
             },
             {
                 "name": "Propeller",
                 "type": "driver.rotor",
                 "number": 6,
-                "number_blades": 5,
-                "radius": 2.3,
+                "number_blades": 6,
+                "radius": 2.5,
                 "tip_velocity": 240.1,
-                "efficiency": 0.6,
+                "efficiency": 0.80,
                 "mass": 10
             },
             {
@@ -374,7 +374,7 @@
                 "number": 6,
                 "efficiency": 0.97,
                 "mass": 50,
-                "max_power": 1000000
+                "max_power": 300000
             }
         ]
     },
@@ -405,8 +405,14 @@
                         "name": "Fuel Tank"
                     },
                     {
-                        "name": "Jet Engine",
-                        "specific_fuel_consumption": 3.4e-5
+                        "name": "4-stroke Piston Engine",
+                        "brake_specific_fuel_consumption": 2.55e-5
+                    },
+                    {
+                        "name": "Gearbox"
+                    },
+                    {
+                        "name": "Propeller"
                     }
                 ]
             },
