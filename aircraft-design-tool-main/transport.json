@@ -265,8 +265,8 @@
                 "name": "Horizontal Tail",
                 "type": "wing.htail",
                 "interf_factor": 1.0,
-                "aspect_ratio": 5.0,
-                "mean_chord": 0.5,
+                "aspect_ratio": 1.03,
+                "mean_chord": 0.56,
                 "oswald_efficiency": 0.85,
                 "airfoil": {
                     "type": "naca0012",
@@ -284,8 +284,8 @@
                 "name": "Vertical Tail",
                 "type": "wing.vtail",
                 "interf_factor": 1.0,
-                "aspect_ratio": 5.0,
-                "mean_chord": 0.5,
+                "aspect_ratio": 1.8,
+                "mean_chord": 0.56,
                 "oswald_efficiency": 0.85,
                 "airfoil": {
                     "type": "naca0012",
@@ -311,7 +311,7 @@
                 "type": "engine.prop",
                 "efficiency": 0.9,
                 "mass": 100,
-                "max_power": 600000
+                "max_power": 750000
             },
             {
                 "name": "Jet Engine",
