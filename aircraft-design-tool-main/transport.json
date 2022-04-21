@@ -154,20 +154,20 @@
                 "type": "vertical_climb",
                 "energy_network": "Electric Energy Network @ vertical flight",
                 "velocity": 5.0,
-                "altitude": [0.0, 90.0]
+                "altitude": [0.0, 300.0]
             },
             {
                 "name": "C",
                 "type": "hover",
                 "energy_network": "Electric Energy Network @ vertical flight",
-                "altitude": 90.0,
+                "altitude": 300.0,
                 "time": 10.0
             },
             {
                 "name": "D",
                 "type": "transition",
                 "energy_network": "Electric Energy Network @ vertical flight",
-                "altitude": 90.0,
+                "altitude": 300.0,
                 "transition_angle": 40.0,
                 "time": 120.0,
                 "velocity": [0.0, 40.0]
@@ -177,7 +177,7 @@
                 "type": "climb",
                 "energy_network": "Fuel Energy Network @ climb",
                 "velocity": 40.0,
-                "altitude": [90.0, 460.0],
+                "altitude": [300.0, 1500.0],
                 "angle": 7.2
             },
             {
@@ -186,14 +186,14 @@
                 "energy_network": "Fuel Energy Network @ cruise",
                 "velocity": 80.0,
                 "range": 200000.0,
-                "altitude": 460.0
+                "altitude": 1500.0
             },
             {
                 "name": "G",
                 "type": "descent",
                 "energy_network": "Fuel Energy Network @ idle",
                 "velocity": -6.0,
-                "altitude": [460.0, 90.0],
+                "altitude": [1500.0, 300.0],
                 "angle": -5.0
             },
             {
@@ -201,7 +201,7 @@
                 "type": "vertical_descent",
                 "energy_network": "Electric Energy Network @ vertical flight",
                 "velocity": -5.0,
-                "altitude": [90.0, 0.0]
+                "altitude": [300.0, 0.0]
             },
             {
                 "name": "I",
