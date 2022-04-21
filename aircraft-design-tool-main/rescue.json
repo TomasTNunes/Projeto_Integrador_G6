@@ -185,7 +185,7 @@
                 "type": "cruise",
                 "energy_network": "Fuel Energy Network @ cruise",
                 "velocity": 80.0,
-                "range": 100000.0,
+                "range": 50000.0,
                 "altitude": 460.0
             },
             {
