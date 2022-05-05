@@ -368,11 +368,11 @@
                 "mass": 50
             },
             {
-                "name": "Turboshaft",
+                "name": "Turboprop",
                 "type": "engine.prop",
                 "efficiency": 0.8,
                 "mass": 100,
-                "max_power": 210000
+                "max_power": 250000
             },
             {
                 "name": "4-stroke Piston Engine",
@@ -390,7 +390,7 @@
             {
                 "name": "Battery",
                 "type": "energy.electric",
-                "specific_energy": 360000.0,
+                "specific_energy": 700000.0,
                 "efficiency": 0.9,
                 "reserve": 0.2,
                 "mass": 100
@@ -404,7 +404,7 @@
             {
                 "name": "Rotor",
                 "type": "driver.rotor.main",
-                "number": 6,
+                "number": 4,
                 "number_blades": 6,
                 "radius": 2.5,
                 "rotor_solidity": 0.08,
@@ -417,7 +417,7 @@
             {
                 "name": "Propeller",
                 "type": "driver.rotor",
-                "number": 6,
+                "number": 1,
                 "number_blades": 6,
                 "radius": 2.5,
                 "tip_velocity": 240.1,
@@ -439,7 +439,7 @@
             {
                 "name": "Electric Motor",
                 "type": "engine.prop",
-                "number": 6,
+                "number": 4,
                 "efficiency": 0.97,
                 "mass": 50,
                 "max_power": 300000
@@ -473,7 +473,7 @@
                         "name": "Fuel Tank"
                     },
                     {
-                        "name": "4-stroke Piston Engine",
+                        "name": "Turboprop",
                         "brake_specific_fuel_consumption": 3.25e-5
                     },
                     {

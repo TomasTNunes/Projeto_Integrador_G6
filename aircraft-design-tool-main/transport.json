@@ -304,7 +304,7 @@
                 "type": "engine.prop",
                 "efficiency": 0.8,
                 "mass": 100,
-                "max_power": 210000
+                "max_power": 250000
             },
             {
                 "name": "4-stroke Piston Engine",
@@ -322,7 +322,7 @@
             {
                 "name": "Battery",
                 "type": "energy.electric",
-                "specific_energy": 360000.0,
+                "specific_energy": 700000.0,
                 "efficiency": 0.9,
                 "reserve": 0.2,
                 "mass": 100
