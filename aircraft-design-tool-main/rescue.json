@@ -372,7 +372,7 @@
                 "type": "engine.prop",
                 "efficiency": 0.8,
                 "mass": 100,
-                "max_power": 250000
+                "max_power": 750000
             },
             {
                 "name": "4-stroke Piston Engine",
@@ -455,7 +455,7 @@
                         "name": "Fuel Tank"
                     },
                     {
-                        "name": "4-stroke Piston Engine",
+                        "name": "Turboprop",
                         "brake_specific_fuel_consumption": 4.25e-5
                     },
                     {
@@ -491,7 +491,7 @@
                         "name": "Fuel Tank"
                     },
                     {
-                        "name": "4-stroke Piston Engine",
+                        "name": "Turboprop",
                         "brake_specific_fuel_consumption": 2.55e-5
                     },
                     {
@@ -509,7 +509,7 @@
                         "name": "Fuel Tank"
                     },
                     {
-                        "name": "4-stroke Piston Engine",
+                        "name": "Turboprop",
                         "brake_specific_fuel_consumption": 4.25e-6
                     },
                     {
