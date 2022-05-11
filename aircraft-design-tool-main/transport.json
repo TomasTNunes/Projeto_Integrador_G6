@@ -153,21 +153,21 @@
                 "name": "B",
                 "type": "vertical_climb",
                 "energy_network": "Electric Energy Network @ vertical flight",
-                "velocity": 5.0,
-                "altitude": [0.0, 300.0]
+                "velocity": 6.0,
+                "altitude": [0.0, 150.0]
             },
             {
                 "name": "C",
                 "type": "hover",
                 "energy_network": "Electric Energy Network @ vertical flight",
-                "altitude": 300.0,
+                "altitude": 150.0,
                 "time": 10.0
             },
             {
                 "name": "D",
                 "type": "transition",
                 "energy_network": "Electric Energy Network @ vertical flight",
-                "altitude": 300.0,
+                "altitude": 150.0,
                 "transition_angle": 40.0,
                 "time": 120.0,
                 "velocity": [0.0, 40.0]
@@ -177,7 +177,7 @@
                 "type": "climb",
                 "energy_network": "Fuel Energy Network @ climb",
                 "velocity": 40.0,
-                "altitude": [300.0, 1500.0],
+                "altitude": [150.0, 1500.0],
                 "angle": 7.2
             },
             {
@@ -185,7 +185,7 @@
                 "type": "cruise",
                 "energy_network": "Fuel Energy Network @ cruise",
                 "velocity": 80.0,
-                "range": 200000.0,
+                "range": 230000.0,
                 "altitude": 1500.0
             },
             {
@@ -193,22 +193,15 @@
                 "type": "descent",
                 "energy_network": "Fuel Energy Network @ idle",
                 "velocity": -6.0,
-                "altitude": [1500.0, 300.0],
+                "altitude": [1500.0, 150.0],
                 "angle": -5.0
             },
             {
                 "name": "H",
                 "type": "vertical_descent",
                 "energy_network": "Electric Energy Network @ vertical flight",
-                "velocity": -5.0,
-                "altitude": [300.0, 0.0]
-            },
-            {
-                "name": "I",
-                "type": "landing",
-                "energy_network": "Fuel Energy Network @ idle",
-                "time": 120.0,
-                "altitude": 0.0
+                "velocity": -6.0,
+                "altitude": [150.0, 0.0]
             }
         ]
     },
@@ -227,12 +220,12 @@
             {
                 "name": "Avionics",
                 "type": "mass.point",
-                "mass": 5
+                "mass": 10
             },
             {
                 "name": "Payload Bay",
                 "type": "mass.point",
-                "mass": 40
+                "mass": 50
             },
             {
                 "name": "Fuselage",
@@ -240,14 +233,14 @@
                 "interf_factor": 1.0,
                 "diameter": 3.0,
                 "length": 7.0,
-                "mass": 1500
+                "mass": 900
             },
             {
                 "name": "Main Wing",
                 "type": "wing.main",
                 "interf_factor": 1.0,
-                "aspect_ratio": 6,
-                "mean_chord": 2.5,
+                "aspect_ratio": 8,
+                "mean_chord": 1.55,
                 "oswald_efficiency": 0.85,
                 "airfoil": {
                     "type": "naca0012",
@@ -265,8 +258,8 @@
                 "name": "Horizontal Tail",
                 "type": "wing.htail",
                 "interf_factor": 1.0,
-                "aspect_ratio": 1.03,
-                "mean_chord": 0.56,
+                "aspect_ratio": 3.33,
+                "mean_chord": 0.85,
                 "oswald_efficiency": 0.85,
                 "airfoil": {
                     "type": "naca0012",
@@ -278,14 +271,14 @@
                 "sweep_le": 10.0,
                 "sweep_c4": 15.0,
                 "sweep_tc_max": 20.0,
-                "mass": 50
+                "mass": 40
             },
             {
                 "name": "Vertical Tail",
                 "type": "wing.vtail",
                 "interf_factor": 1.0,
-                "aspect_ratio": 1.8,
-                "mean_chord": 0.56,
+                "aspect_ratio": 3.33,
+                "mean_chord": 0.85,
                 "oswald_efficiency": 0.85,
                 "airfoil": {
                     "type": "naca0012",
@@ -297,7 +290,7 @@
                 "sweep_le": 10.0,
                 "sweep_c4": 15.0,
                 "sweep_tc_max": 20.0,
-                "mass": 50
+                "mass": 40
             },
             {
                 "name": "Turboprop",
@@ -337,24 +330,24 @@
                 "name": "Rotor",
                 "type": "driver.rotor.main",
                 "number": 4,
-                "number_blades": 6,
-                "radius": 2.5,
+                "number_blades": 4,
+                "radius": 1.6,
                 "rotor_solidity": 0.08,
                 "induced_power_factor": 1.15,
                 "base_drag_coefficient": 0.02,
                 "tip_velocity": 240.1,
                 "efficiency": 0.8,
-                "mass": 10
+                "mass": 15
             },
             {
                 "name": "Propeller",
                 "type": "driver.rotor",
                 "number": 1,
-                "number_blades": 6,
-                "radius": 2.5,
+                "number_blades": 4,
+                "radius": 1.6,
                 "tip_velocity": 240.1,
                 "efficiency": 0.80,
-                "mass": 10
+                "mass": 15
             },
             {
                 "name": "Gearbox",
@@ -388,7 +381,7 @@
                     },
                     {
                         "name": "Turboprop",
-                        "brake_specific_fuel_consumption": 4.25e-5
+                        "brake_specific_fuel_consumption": 4.25e-8
                     },
                     {
                         "name": "Gearbox"
@@ -406,7 +399,7 @@
                     },
                     {
                         "name": "Turboprop",
-                        "brake_specific_fuel_consumption": 3.25e-5
+                        "brake_specific_fuel_consumption": 3.25e-8
                     },
                     {
                         "name": "Gearbox"
@@ -424,7 +417,7 @@
                     },
                     {
                         "name": "Turboprop",
-                        "brake_specific_fuel_consumption": 2.55e-5
+                        "brake_specific_fuel_consumption": 2.55e-8
                     },
                     {
                         "name": "Gearbox"
@@ -442,7 +435,7 @@
                     },
                     {
                         "name": "Turboprop",
-                        "brake_specific_fuel_consumption": 4.25e-6
+                        "brake_specific_fuel_consumption": 4.25e-9
                     },
                     {
                         "name": "Gearbox"
