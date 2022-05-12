@@ -170,13 +170,13 @@
                 "altitude": 150.0,
                 "transition_angle": 40.0,
                 "time": 120.0,
-                "velocity": [0.0, 40.0]
+                "velocity": [0.0, 80.0]
             },
             {
                 "name": "E",
                 "type": "climb",
                 "energy_network": "Fuel Energy Network @ climb",
-                "velocity": 40.0,
+                "velocity": 80.0,
                 "altitude": [150.0, 700.0],
                 "angle": 7.2
             },
@@ -192,7 +192,7 @@
                 "name": "G",
                 "type": "descent",
                 "energy_network": "Fuel Energy Network @ idle",
-                "velocity": -6.0,
+                "velocity": -50.0,
                 "altitude": [700.0, 150.0],
                 "angle": -5.0
             },
@@ -231,13 +231,13 @@
                 "altitude": 150.0,
                 "transition_angle": 40.0,
                 "time": 120.0,
-                "velocity": [0.0, 40.0]
+                "velocity": [0.0, 80.0]
             },
             {
                 "name": "M",
                 "type": "climb",
                 "energy_network": "Fuel Energy Network @ climb",
-                "velocity": 40.0,
+                "velocity": 80.0,
                 "altitude": [150.0, 700.0],
                 "angle": 7.2
             },
@@ -253,7 +253,7 @@
                 "name": "O",
                 "type": "descent",
                 "energy_network": "Fuel Energy Network @ idle",
-                "velocity": -6.0,
+                "velocity": -50.0,
                 "altitude": [700.0, 150.0],
                 "angle": -5.0
             },
@@ -292,7 +292,7 @@
                 "name": "Fuselage",
                 "type": "fuselage",
                 "interf_factor": 1.0,
-                "diameter": 3.0,
+                "diameter": 2.0,
                 "length": 7.0,
                 "mass": 900
             },
