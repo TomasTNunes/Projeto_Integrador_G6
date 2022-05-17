@@ -361,38 +361,25 @@
                 "max_power": 750000
             },
             {
-                "name": "4-stroke Piston Engine",
-                "type": "engine.prop",
-                "efficiency": 0.9,
-                "mass": 100,
-                "max_power": 750000
-            },
-            {
-                "name": "Jet Engine",
-                "type": "engine.jet",
-                "mass": 200,
-                "max_power": 1200000
-            },
-            {
                 "name": "Battery",
                 "type": "energy.electric",
                 "specific_energy": 1000000.0,
                 "efficiency": 0.9,
                 "reserve": 0.2,
-                "mass": 100
+                "mass": 0 %isto varia ao correr o programa
             },
             {
                 "name": "Fuel Tank",
                 "type": "energy.fuel",
                 "reserve": 0.06,
-                "mass": 0
+                "mass": 0 %isto varia ao correr o programa
             },
             {
                 "name": "Rotor",
                 "type": "driver.rotor.main",
                 "number": 4,
                 "number_blades": 4,
-                "radius": 1.6,
+                "radius": 0.9,
                 "rotor_solidity": 0.08,
                 "induced_power_factor": 1.15,
                 "base_drag_coefficient": 0.02,
@@ -442,7 +429,7 @@
                     },
                     {
                         "name": "Turboprop",
-                        "brake_specific_fuel_consumption": 4.25e-8
+                        "brake_specific_fuel_consumption": 7.5e-8
                     },
                     {
                         "name": "Gearbox"
@@ -460,7 +447,7 @@
                     },
                     {
                         "name": "Turboprop",
-                        "brake_specific_fuel_consumption": 3.25e-8
+                        "brake_specific_fuel_consumption": 6.8e-8
                     },
                     {
                         "name": "Gearbox"
@@ -478,7 +465,7 @@
                     },
                     {
                         "name": "Turboprop",
-                        "brake_specific_fuel_consumption": 2.55e-8
+                        "brake_specific_fuel_consumption": 4.5e-8
                     },
                     {
                         "name": "Gearbox"
