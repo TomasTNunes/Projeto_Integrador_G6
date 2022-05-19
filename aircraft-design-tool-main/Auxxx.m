@@ -204,7 +204,7 @@ for i=1:length(X_values)
 end
 
 %table
-varNames = ["bSFC cruise *10^-8 [kg/Ws]","MTOW [kg]","W/S [N/m^2]","W/A [N/m^2]","W/Pf [N/W]","W/Pv [N/W]"];
+varNames = ["bSFC cruise *10^-^8 [kg/Ws]","MTOW [kg]","W/S [N/m^2]","W/A [N/m^2]","W/Pf [N/W]","W/Pv [N/W]"];
 tab = table(X,MTOW,WS,WA,WPf,WPv,'VariableNames',varNames);
 writetable(tab,'VarData.xlsx','Sheet',1,'Range','AR1');
 
