@@ -358,7 +358,7 @@
                 "type": "engine.prop",
                 "efficiency": 0.8,
                 "mass": 100,
-                "max_power": 750000
+                "max_power": 500000
             },
             {
                 "name": "Battery",
@@ -366,13 +366,13 @@
                 "specific_energy": 1440000.0,
                 "efficiency": 0.9,
                 "reserve": 0.2,
-                "mass": 0 %isto varia ao correr o programa
+                "mass": 0 
             },
             {
                 "name": "Fuel Tank",
                 "type": "energy.fuel",
                 "reserve": 0.06,
-                "mass": 0 %isto varia ao correr o programa
+                "mass": 0 
             },
             {
                 "name": "Rotor",
