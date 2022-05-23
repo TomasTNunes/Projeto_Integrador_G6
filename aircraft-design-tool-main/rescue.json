@@ -503,6 +503,9 @@
                         "name": "Electric Motor"
                     },
                     {
+                        "name": "Gearbox"
+                    },
+                    {
                         "name": "Propeller"
                     }
                 ]
@@ -517,30 +520,10 @@
                         "name": "Electric Motor"
                     },
                     {
-                        "name": "Rotor"
-                    }
-                ]
-            },
-            {
-                "name": "Hybrid Energy Network",
-                "layout": [
-                    {
-                        "name": "Fuel Tank"
-                    },
-                    {
-                        "name": "Turboshaft"
-                    },
-                    {
                         "name": "Gearbox"
                     },
                     {
-                        "name": "Generator"
-                    },
-                    {
-                        "name": "Electric Motor"
-                    },
-                    {
-                        "name": "Propeller"
+                        "name": "Rotor"
                     }
                 ]
             }
