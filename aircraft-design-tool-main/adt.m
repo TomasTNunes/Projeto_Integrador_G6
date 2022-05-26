@@ -21,7 +21,7 @@ data.mission = build_mission(data.mission);
 data.vehicle = build_vehicle(data.mission, data.vehicle);
 
 %% Plot mission profile
-plot_mission(data.mission);
+% plot_mission(data.mission);
 
 %% Mission analyses
 data.vehicle = aero_analysis(data.mission, data.vehicle);
