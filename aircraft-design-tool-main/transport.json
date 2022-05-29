@@ -397,24 +397,6 @@
                 ]
             },
             {
-                "name": "Fuel Energy Network @ hold",
-                "layout": [
-                    {
-                        "name": "Fuel Tank"
-                    },
-                    {
-                        "name": "Turboprop",
-                        "brake_specific_fuel_consumption": 4.5e-8
-                    },
-                    {
-                        "name": "Gearbox_turboprop"
-                    },
-                    {
-                        "name": "Propeller"
-                    }
-                ]
-            },
-            {
                 "name": "Fuel Energy Network @ idle",
                 "layout": [
                     {
@@ -445,7 +427,7 @@
                         "name": "Gearbox_eletric"
                     },
                     {
-                        "name": "Propeller"
+                        "name": "Rotor"
                     }
                 ]
             },
