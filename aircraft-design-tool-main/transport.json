@@ -302,7 +302,7 @@
             {
                 "name": "Battery",
                 "type": "energy.electric",
-                "specific_energy": 1080000,
+                "specific_energy": 1188000,
                 "efficiency": 0.96,
                 "reserve": 0.2,
                 "mass": 0 
