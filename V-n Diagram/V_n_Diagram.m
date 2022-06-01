@@ -141,15 +141,17 @@ n_9 = [n_min n_min];
 V_10 = [V_n1 V_n1];
 n_10 = [n_min 1];
 
-% Plot V-n Diagram with gust
+% Duplicate figure
 a1 = gca;
 f2 = figure(2);
 a2 = copyobj(a1,f2);
 f=get(gca,'Children');
 legend([f(1),f(2)],'Basic V-n Diagram','V-n Diagram with gust','Location','Northwest')
 clear f
+
+% Plot Combined V-n Diagram
 figure(1)
-plot(V_1,n_1,'-g','LineWidth',1.5,'DisplayName','V-n Diagram with gust')
+plot(V_1,n_1,'-g','LineWidth',1.5)
 plot(V_2,n_2,'-g','LineWidth',1.5)
 plot(V_3,n_3,'-g','LineWidth',1.5)
 plot(V_4,n_4,'-g','LineWidth',1.5)
@@ -159,6 +161,8 @@ plot(V_7,n_7,'-g','LineWidth',1.5)
 plot(V_8,n_8,'-g','LineWidth',1.5)
 plot(V_9,n_9,'-g','LineWidth',1.5)
 plot(V_10,n_10,'-g','LineWidth',1.5)
-f=get(gca,'Children');
-legend([f(12),f(11),f(1)],'Basic V-n Diagram','V-n Diagram with gust','V-n Diagram with gust','Location','Northwest')
 
+% Plot Area in Combined V-n Diagram
+patch('XData',[V_1,V_2,V_3,V_4,V_5,V_6,V_7,V_8,V_9,V_10],'YData',[n_1,n_2,n_3,n_4,n_5,n_6,n_7,n_8,n_9,n_10],'FaceAlpha',0.2,'FaceColor','green','LineStyle','none')
+f=get(gca,'Children');
+legend([f(13),f(12),f(2)],'Basic V-n Diagram','V-n Diagram with gust','Combined V-n Diagram','Location','Northwest')
