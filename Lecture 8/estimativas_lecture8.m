@@ -13,7 +13,7 @@ R = 287.052874;     % constante dos gases
 T = 288.15-0.0065*h_cr;                         % temperatura (K)
 rho = 1.225*(1-0.0065*h_cr/288.15)^4.25588;     % densidade (kg/m^3)
 miu = 1.458*10^-6*T^(3/2)/(T+110.4);            % viscosidade (kg/ms)
-M = sqrt(gamma*R*T);                            % número de Mach
+a = sqrt(gamma*R*T);                            % Velocidade do Som
 
 q = 1/2*rho*V_cr^2;     % pressão dinâmica
 Re = rho*l*V_cr/miu;    % Reynolds
@@ -25,7 +25,7 @@ S_wet = 1.7*(A_side+A_top);         % wetted area da fuselagem
 form = 1 + 60*(l/d)^3 + (d/l)/400;                      % form factor
 Q = 1.5;                    % interference factor igual ao do exemplo
 
-Cf = 0.455/(((log10(Re))^2.58)*(1+0.144*M^2)^0.65); % coeficiente de fricção turbulento
+Cf = 0.455/(((log10(Re))^2.58)*(1+0.144*(V_cr/a)^2)^0.65); % coeficiente de fricção turbulento
 
 Ff = q*S_wet*Cf*form*Q;
 Fw = 0;                     % não há wave drag
