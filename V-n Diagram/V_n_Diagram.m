@@ -147,6 +147,10 @@ f2 = figure(2);
 a2 = copyobj(a1,f2);
 f=get(gca,'Children');
 legend([f(1),f(2)],'Basic V-n Diagram','V-n Diagram with gust','Location','Northwest')
+title('V-n Diagram')
+xlabel('V [m/s]')
+ylabel('n')
+xlim([0 Vd+10])
 clear f
 
 % Plot Combined V-n Diagram
@@ -164,5 +168,12 @@ plot(V_10,n_10,'-g','LineWidth',1.5)
 
 % Plot Area in Combined V-n Diagram
 patch('XData',[V_1,V_2,V_3,V_4,V_5,V_6,V_7,V_8,V_9,V_10],'YData',[n_1,n_2,n_3,n_4,n_5,n_6,n_7,n_8,n_9,n_10],'FaceAlpha',0.2,'FaceColor','green','LineStyle','none')
+
+% Plot Info
 f=get(gca,'Children');
 legend([f(13),f(12),f(2)],'Basic V-n Diagram','V-n Diagram with gust','Combined V-n Diagram','Location','Northwest')
+title('V-n Diagram')
+xlabel('V [m/s]')
+ylabel('n')
+xlim([0 Vd+10])
+
