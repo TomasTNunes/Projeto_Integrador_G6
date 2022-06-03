@@ -3,7 +3,7 @@ close all
 clc
 addpath('../aircraft-design-tool-main')
 
-% Get data from json and anlgorithm
+% Get data from json and algorithm
 global constants;
 constants.g = 9.81; % m/s^2
 data = load_project('transport.json');
