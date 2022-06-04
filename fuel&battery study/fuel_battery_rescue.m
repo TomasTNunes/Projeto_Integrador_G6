@@ -98,7 +98,15 @@ T = table(seg_time(:),m_fuel_seg(:),m_battery_seg(:),'VariableNames',row_n,'RowN
 fuel_dens = 808; %Kg/m^3
 fuel_volume = m_fuel/fuel_dens;
 fprintf('Volume for fuel = %f m^3 = %f dm^3 = %f cm^3 \n',fuel_volume,fuel_volume*1000,fuel_volume*1000000)
-fprintf('Caso seja um cubo é de dimensão %f x %f x %f cm \n',(fuel_volume*1000000)^(1/3),(fuel_volume*1000000)^(1/3),(fuel_volume*1000000)^(1/3))
+fprintf('Caso seja um cubo é de dimensão %f x %f x %f cm \n\n',(fuel_volume*1000000)^(1/3),(fuel_volume*1000000)^(1/3),(fuel_volume*1000000)^(1/3))
+
+% Determine Battery Volume
+spec_ener_batt = data.vehicle.components{10, 1}.specific_energy / 3600; %Wh/Kg
+energy_dens_batt = 450; %Wh/L
+batt_dens = spec_ener_batt / energy_dens_batt; %L/Kg
+batt_volume = batt_dens * m_battery; %L
+fprintf('Volume for battery = %f m^3 = %f dm^3 = %f cm^3 \n',batt_volume/1000,batt_volume,batt_volume*1000)
+fprintf('Caso seja um cubo é de dimensão %f x %f x %f cm \n',(batt_volume*1000)^(1/3),(batt_volume*1000)^(1/3),(batt_volume*1000)^(1/3))
 
 
 %%%%%%%%%%%%%%%%%%%%%%-------Functions-------%%%%%%%%%%%%%%%%%%%%%%%
