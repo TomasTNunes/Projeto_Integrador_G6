@@ -12,11 +12,12 @@ for ii=1:length(X)
     hold on
 end
 
-xlabel('X')
-ylabel('Y')
-zlabel('Z')
+xlabel('X [mm]')
+ylabel('Y [mm]')
+zlabel('Z [mm]')
 set ( gca,'ydir','reverse')
 set ( gca,'zdir','reverse')
+title('Centros Geometricos das Componentes')
 legend(comp)
 
 end
