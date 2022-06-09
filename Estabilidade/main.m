@@ -53,6 +53,8 @@ data.vehicle = aero_analysis(data.mission, data.vehicle);
 [data.mission, data.vehicle] = mass_analysis(data.mission, data.vehicle, data.energy);
 
 % Get mass for each component
+num_fuelt = strcmp(jname, 'Fuel Tank');
+num_fuelt = length(num_fuelt(num_fuelt==1));
 comp_mass(1) = 0;
 for i=2:length(jname)
     clear elem id
@@ -63,6 +65,9 @@ for i=2:length(jname)
         [elem2, id2] = find_by_name(data.vehicle.components, jname_t2);
         comp_mass(i) = elem1.mass + elem2.mass;
         clear jname_t1 jname_t2 elem1 elem2 id1 id2
+    elseif strcmp(jname{i}, 'Fuel Tank')
+        [elem, id] = find_by_name(data.vehicle.components, jname{i});
+        comp_mass(i) = elem.mass / num_fuelt;
     else
         [elem, id] = find_by_name(data.vehicle.components, jname{i});
         comp_mass(i) = elem.mass;
