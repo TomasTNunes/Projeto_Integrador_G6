@@ -8,15 +8,15 @@ addpath('../aircraft-design-tool-main')
 filename = 'Centros_Geometricos.xlsx';
 
 % get parts names
-xlRange_comp = 'A2:A16';
+xlRange_comp = 'A2:A20';
 [~,comp] = xlsread(filename,xlRange_comp);
 
 % get parts json names
-xlRange_jname = 'E2:E16';
+xlRange_jname = 'E2:E20';
 [~,jname] = xlsread(filename,xlRange_jname);
 
 % get coordinates
-xlRange = 'B2:D16';
+xlRange = 'B2:D20';
 data = xlsread(filename,xlRange);
 data_X = data(:,1);
 data_Y = data(:,2);
@@ -31,7 +31,7 @@ data_Z_corr = data_Z - data_Z(1);
 % Rotate from SW frame to body frame
 R = [-1  0  0;
       0  0 -1;
-      0 -1  0;];
+      0 -1  0];
 rot_coord = R*[data_X_corr';data_Y_corr';data_Z_corr'];
 X = rot_coord(1,:);
 Y = rot_coord(2,:);
