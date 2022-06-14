@@ -8,15 +8,19 @@ addpath('../aircraft-design-tool-main')
 filename = 'Centros_Geometricos.xlsx';
 
 % get parts names
-xlRange_comp = 'A2:A20';
+xlRange_comp = 'A2:A18';
 [~,comp] = xlsread(filename,xlRange_comp);
 
 % get parts json names
-xlRange_jname = 'E2:E20';
+xlRange_jname = 'E2:E18';
 [~,jname] = xlsread(filename,xlRange_jname);
 
+% get program frame
+xlRange_prog_frame = 'F2:F18';
+[~,prog_frame] = xlsread(filename,xlRange_prog_frame);
+
 % get coordinates
-xlRange = 'B2:D20';
+xlRange = 'B2:D18';
 data = xlsread(filename,xlRange);
 data_X = data(:,1);
 data_Y = data(:,2);
@@ -24,23 +28,31 @@ data_Z = data(:,3);
 
 %% Data Processing
 % Translate Frame to chosen origin
-data_X_corr = data_X - data_X(1);
-data_Y_corr = data_Y - data_Y(1);
-data_Z_corr = data_Z - data_Z(1);
+data_X_corr = data_X(strcmp(prog_frame,'SW')) - data_X(1);
+data_X_corr = [data_X_corr(1);data_X(2);data_X(3);data_X_corr(2:end)];
+data_Y_corr = data_Y(strcmp(prog_frame,'SW')) - data_Y(1);
+data_Y_corr = [data_Y_corr(1);data_Y(2);data_Y(3);data_Y_corr(2:end)];
+data_Z_corr = data_Z(strcmp(prog_frame,'SW')) - data_Z(1);
+data_Z_corr = [data_Z_corr(1);data_Z(2);data_Z(3);data_Z_corr(2:end)];
 
-% Rotate from SW frame to body frame
+% Rotate from SW frame to body frame 
 R = [-1  0  0;
       0  0 -1;
       0 -1  0];
-rot_coord = R*[data_X_corr';data_Y_corr';data_Z_corr'];
+rot_coord = R*[data_X_corr(strcmp(prog_frame,'SW'))';data_Y_corr(strcmp(prog_frame,'SW'))';data_Z_corr(strcmp(prog_frame,'SW'))'];
 X = rot_coord(1,:);
 Y = rot_coord(2,:);
 Z = rot_coord(3,:);
 
+% Rotate from XFLR5 frame to body frame 
+X = [X(1),-data_X_corr(2),-data_X_corr(3),X(2:end)];
+Y = [Y(1),data_Y_corr(2),data_Y_corr(3),Y(2:end)];
+Z = [Z(1),-data_Z_corr(2),-data_Z_corr(3),Z(2:end)];
+
 % Plot geometric Centers of components
 plot_centers(X,Y,Z,comp)
 
-clearvars -except X Y Z comp jname
+%clearvars -except X Y Z comp jname
 
 %% Read Json file
 % Get data from json and algorithm
