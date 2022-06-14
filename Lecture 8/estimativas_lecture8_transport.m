@@ -33,7 +33,7 @@ S_wet = 1.7*(A_side+A_top);         % wetted area da fuselagem
 
 % form = 1 + 60*(l/d)^3 + (d/l)/400;            % fórmula dos slides errada
 form = 1 + 60*(d/l)^3 + (l/d)/400;              % fórmula do exemplo
-Q = 1.5;                    % interference factor igual ao do exemplo
+Q = data.vehicle.components{5, 1}.interf_factor;         % interference factor igual ao do exemplo
 
 Cf = 0.455/(((log10(Re))^2.58)*(1+0.144*(V_cr/a)^2)^0.65); % coeficiente de fricção turbulento
 

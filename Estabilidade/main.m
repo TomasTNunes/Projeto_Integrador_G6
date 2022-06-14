@@ -68,6 +68,10 @@ for i=2:length(jname)
     elseif strcmp(jname{i}, 'Fuel Tank')
         [elem, id] = find_by_name(data.vehicle.components, jname{i});
         comp_mass(i) = elem.mass / num_fuelt;
+    elseif strcmp(jname{i}, 'Fuselage')
+        [elem, id] = find_by_name(data.vehicle.components, jname{i});
+        comp_mass(i) = elem.mass + data.vehicle.components{1, 1}.mass + ...
+            data.vehicle.components{2, 1}.mass + data.vehicle.components{4, 1}.mass;
     else
         [elem, id] = find_by_name(data.vehicle.components, jname{i});
         comp_mass(i) = elem.mass;
@@ -93,3 +97,6 @@ Y_aux(end+1) = Y_CG;
 Z_aux(end+1) = Z_CG;
 comp_aux{end+1} = 'CG';
 plot_centers(X_aux,Y_aux,Z_aux,comp_aux)
+
+% XFLR-5 frame
+pos_xflr5 = [-X' Y' -Z'];

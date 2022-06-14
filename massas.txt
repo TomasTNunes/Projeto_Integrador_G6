@@ -1,0 +1,8 @@
+m_fus = 617kg (formula)
+m_maca = 70kg
+m_equip = 80kg (s/ maca)
+m_banco (3 bancos) = 3*12kg
+m_payload = m_banco + m_equip + m_maca = 186kg
+
+m_wing (aprox 9% MTOM_rescue) = 200kg
+m_tail (aprox 2% MTOM_rescue) = 40kg

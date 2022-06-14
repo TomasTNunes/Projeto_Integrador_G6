@@ -220,20 +220,20 @@
             {
                 "name": "Avionics",
                 "type": "mass.point",
-                "mass": 10
+                "mass": 15
             },
             {
                 "name": "Payload Bay",
                 "type": "mass.point",
-                "mass": 50
+                "mass": 186
             },
             {
                 "name": "Fuselage",
                 "type": "fuselage",
-                "interf_factor": 1.0,
+                "interf_factor": 1.5,
                 "diameter": 2.0,
-                "length": 7.0,
-                "mass": 900
+                "length": 8.1,
+                "mass": 617
             },
             {
             "name": "Main Wing",
@@ -271,7 +271,7 @@
                 "sweep_le": 11.56,
                 "sweep_c4": 7.76516,
                 "sweep_tc_max": 6.53449,
-                "mass": 40
+                "mass": 20
             },
             {
                 "name": "Vertical Tail",
@@ -290,7 +290,7 @@
                 "sweep_le": 11.56,
                 "sweep_c4": 7.76516,
                 "sweep_tc_max": 6.53449,
-                "mass": 40
+                "mass": 20
             },
             {
                 "name": "Turboprop",
@@ -353,7 +353,7 @@
                 "type": "engine.prop",
                 "number": 4,
                 "efficiency": 0.97,
-                "mass": 33.5,
+                "mass": 45,
                 "max_power": 300000
             }
         ]
