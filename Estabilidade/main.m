@@ -52,7 +52,7 @@ Z = [Z(1),-data_Z_corr(2),-data_Z_corr(3),Z(2:end)];
 % Plot geometric Centers of components
 plot_centers(X,Y,Z,comp)
 
-%clearvars -except X Y Z comp jname
+clearvars -except X Y Z comp jname
 
 %% Read Json file
 % Get data from json and algorithm
@@ -79,7 +79,10 @@ for i=2:length(jname)
         clear jname_t1 jname_t2 elem1 elem2 id1 id2
     elseif strcmp(jname{i}, 'Fuel Tank')
         [elem, id] = find_by_name(data.vehicle.components, jname{i});
-        comp_mass(i) = elem.mass / num_fuelt;
+        comp_mass(i) = elem.mass * (1 + elem.reserve) / num_fuelt;
+    elseif strcmp(jname{i}, 'Battery')
+        [elem, id] = find_by_name(data.vehicle.components, jname{i});
+        comp_mass(i) = elem.mass * (1 + elem.reserve);
     elseif strcmp(jname{i}, 'Fuselage')
         [elem, id] = find_by_name(data.vehicle.components, jname{i});
         comp_mass(i) = elem.mass + data.vehicle.components{1, 1}.mass + ...
