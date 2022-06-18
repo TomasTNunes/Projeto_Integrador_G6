@@ -8,8 +8,8 @@ fig_n = 1;
 %% Raio Rotores, Nº Rotores
 %MTOW
 clearvars -except fig_n filename
-xlRange = 'A2:G41';
-xlRange_var = 'A1:G61';
+xlRange = 'A2:G81';
+xlRange_var = 'A1:G1';
 [~,data_varname] = xlsread(filename,xlRange_var);
 data = xlsread(filename,xlRange);
 data_X = data(:,1);

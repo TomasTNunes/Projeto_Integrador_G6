@@ -9,7 +9,7 @@ constants.g = 9.81; % m/s^2
 %% Raio Rotores, Nº Rotores
 clearvars -except constants
 data = load_project('transport.json');
-X_values = linspace(0.7,1,15);
+X_values = linspace(0.7,1.2,20);
 Y_values = [2 4 6 8];
 j = 1;
 
