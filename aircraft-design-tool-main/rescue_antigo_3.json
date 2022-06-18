@@ -291,17 +291,17 @@
             {
                 "name": "Fuselage",
                 "type": "fuselage",
-                "interf_factor": 1.5,
+                "interf_factor": 1.0,
                 "diameter": 2.0,
-                "length": 8.1,
-                "mass": 617
+                "length": 7.0,
+                "mass": 900
             },
             {
-            "name": "Main Wing",
+                "name": "Main Wing",
                 "type": "wing.main",
                 "interf_factor": 1.0,
-                "aspect_ratio": 7.92,
-                "mean_chord": 1.565,
+                "aspect_ratio": 8.039,
+                "mean_chord": 1.5425,
                 "oswald_efficiency": 0.85,
                 "airfoil": {
                     "type": "naca0012",
@@ -310,36 +310,36 @@
                     "lift_slope_coefficient": 6.2,
                     "cl_max": 1.694075
                 },
-                "sweep_le": 3.78,
-                "sweep_c4": 0.254,
-                "sweep_tc_max": -4.702,
-                "mass": 200
+                "sweep_le": 2.77,
+                "sweep_c4": -0.6584,
+                "sweep_tc_max": -4.564,
+                "mass": 202
             },
             {
                 "name": "Horizontal Tail",
                 "type": "wing.htail",
                 "interf_factor": 1.0,
-                "aspect_ratio": 5.81395,
-                "mean_chord": 1.05,
+                "aspect_ratio": 4.89,
+                "mean_chord": 1.1,
                 "oswald_efficiency": 0.85,
                 "airfoil": {
                     "type": "naca0012",
                     "tc_max": 0.12,
-                    "xc_max": 0.3,
+                    "xc_max": 6.2,
                     "lift_slope_coefficient": 6.2,
                     "cl_max": 1.850866
                 },
-                "sweep_le": 4.46,
-                "sweep_c4": 1.60386,
-                "sweep_tc_max": 1.0312,
-                "mass": 20
+                "sweep_le": 11.56,
+                "sweep_c4": 7.76516,
+                "sweep_tc_max": 6.53449,
+                "mass": 22.8
             },
             {
                 "name": "Vertical Tail",
                 "type": "wing.vtail",
                 "interf_factor": 1.0,
-                "aspect_ratio": 1.16736,
-                "mean_chord": 1.050,
+                "aspect_ratio": 1.7086,
+                "mean_chord": 0.85,
                 "oswald_efficiency": 0.85,
                 "airfoil": {
                     "type": "naca0012",
@@ -348,10 +348,10 @@
                     "lift_slope_coefficient": 6.2,
                     "cl_max": 1.850866
                 },
-                "sweep_le": 4.46,
-                "sweep_c4": 1.60386,
-                "sweep_tc_max": 1.0312,
-                "mass": 20
+                "sweep_le": 11.56,
+                "sweep_c4": 7.76516,
+                "sweep_tc_max": 6.53449,
+                "mass": 22.8
             },
             {
                 "name": "Turboprop",
@@ -432,7 +432,7 @@
                         "brake_specific_fuel_consumption": 7.91e-8
                     },
                     {
-                        "name": "Gearbox_turboprop"
+                        "name": "Gearbox"
                     },
                     {
                         "name": "Propeller"
@@ -450,7 +450,7 @@
                         "brake_specific_fuel_consumption": 8.01e-8
                     },
                     {
-                        "name": "Gearbox_turboprop"
+                        "name": "Gearbox"
                     },
                     {
                         "name": "Propeller"
@@ -468,7 +468,7 @@
                         "brake_specific_fuel_consumption": 3.3e-7
                     },
                     {
-                        "name": "Gearbox_turboprop"
+                        "name": "Gearbox"
                     },
                     {
                         "name": "Propeller"
@@ -512,3 +512,4 @@
         ]
     }
 }
+

@@ -220,12 +220,12 @@
             {
                 "name": "Avionics",
                 "type": "mass.point",
-                "mass": 10
+                "mass": 15
             },
             {
                 "name": "Payload Bay",
                 "type": "mass.point",
-                "mass": 50
+                "mass": 186
             },
             {
                 "name": "Fuselage",
@@ -343,10 +343,10 @@
                 "mass": 5
             },
             {
-                "name": "Generator",
-                "type": "generator",
-                "efficiency": 0.96,
-                "mass": 50
+                "name": "Gearbox_eletric",
+                "type": "gearbox",
+                "efficiency": 0.95,
+                "mass": 0
             },
             {
                 "name": "Electric Motor",
@@ -397,24 +397,6 @@
                 ]
             },
             {
-                "name": "Fuel Energy Network @ hold",
-                "layout": [
-                    {
-                        "name": "Fuel Tank"
-                    },
-                    {
-                        "name": "Turboprop",
-                        "brake_specific_fuel_consumption": 4.5e-8
-                    },
-                    {
-                        "name": "Gearbox"
-                    },
-                    {
-                        "name": "Propeller"
-                    }
-                ]
-            },
-            {
                 "name": "Fuel Energy Network @ idle",
                 "layout": [
                     {
@@ -442,10 +424,10 @@
                         "name": "Electric Motor"
                     },
                     {
-                        "name": "Gearbox"
+                        "name": "Gearbox_eletric"
                     },
                     {
-                        "name": "Propeller"
+                        "name": "Rotor"
                     }
                 ]
             },
@@ -459,7 +441,7 @@
                         "name": "Electric Motor"
                     },
                     {
-                        "name": "Gearbox"
+                        "name": "Gearbox_eletric"
                     },
                     {
                         "name": "Rotor"

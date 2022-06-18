@@ -346,7 +346,7 @@
                 "name": "Gearbox_eletric",
                 "type": "gearbox",
                 "efficiency": 0.95,
-                "mass": 10
+                "mass": 0
             },
             {
                 "name": "Electric Motor",
