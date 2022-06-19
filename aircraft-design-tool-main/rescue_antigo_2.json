@@ -358,7 +358,7 @@
                 "type": "engine.prop",
                 "efficiency": 0.8,
                 "mass": 100,
-                "max_power": 500000
+                "max_power": 600000
             },
             {
                 "name": "Battery",
