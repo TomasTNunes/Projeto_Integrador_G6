@@ -30,7 +30,7 @@ M_bat = vehicle.components{10, 1}.mass * (1 + vehicle.components{10, 1}.reserve)
 bat_spec_ene_dens = vehicle.components{10, 1}.specific_energy / 1000000; % Battery Specific Energy Density (MJ/kg)
 bat_vol_ene_dens = 450; % Fuel Volumetric Energy Density (W.h/L)
 battery_production = 147.7 * 1000 ; % CO2-eq emissions per kW.h of battery produced (gCO2eq/(kW.h))
-Electric_mix = 255; % CO2-eq emissions per kW.h of electric energy (gCO2eq/(kW.h)) [Portugal Eletric Mix]
+Electric_mix = 324,7; % CO2-eq emissions per kW.h of electric energy (gCO2eq/(kW.h)) [Portugal Eletric Mix]
 Energy_bat = bat_spec_ene_dens * M_bat * 1000 / 3.6; % Battery energy (W.h)
 N_cycles = 500;
 
@@ -47,4 +47,4 @@ Emissions_production = Emissions_bat_prod + Emissions_fuel_prod % CO2-eq emissio
 Emissions_energy = Emissions_bat_energy + Emissions_fuel_energy % CO2-eq emissions due to energy consumption (kgCO2eq)
 Emissions_total = Emissions_production + Emissions_energy % Total value of CO2-eq emissions (kgCO2eq)
 
-
+Emissons_use = Emissions_fuel + Emissions_bat_energy % CO2-eq emissions due to use phase(KgCO2eq)
