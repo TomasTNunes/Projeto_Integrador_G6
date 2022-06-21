@@ -30,7 +30,7 @@ NR = vehicle.components{12, 1}.number; % Number of Rotors
 Th = vehicle.mass * constants.g; % Thrust in hover (N)
 Thr = Th / NR; % Thrust in hover per rotor (N) - Assumption: all rotors contribute equally to the total thrust
 ki = vehicle.components{12, 1}.induced_power_factor; % Rotor induced power factor
-[~, DL, fpl_design, ~] = calculates_loadings(mission, vehicle, energy); % (N/m^2) Disk loading
+[~, DL, ~, ~] = calculates_loadings(mission, vehicle, energy); % (N/m^2) Disk loading
 rho = mission.segments{6, 1}.density; % Air Density (kg/m3) - SL, ISA + 20ºC conditions [Cruise, mas a altura do cruise e baixa 700m]
 s = vehicle.components{12, 1}.rotor_solidity; % Rotor solidity (-)
 cd0 = vehicle.components{12, 1}.base_drag_coefficient; % Rotor base drag coefficient
@@ -55,6 +55,7 @@ for i=1:(nsteps+1)
     pmL = (m*NB*Omega/(2*sqrt(2)*pi()*a*DS))*(Thr*cos(theta) - Torque*a/(Omega*Re*Re))*JmB;
     pmT = -(rho*((m*NB*Omega)^2)*NB/(3*sqrt(2)*pi()*DS))*c*t*Re*JmB;
     pd_rot = NR*((pmL*pmL + pmT*pmT)/(pref*pref));
+    pd_rot_v(i) = pd_rot;
 
     % Vortex Noise
     AA = pi()*r*r; % Disk area
@@ -80,8 +81,11 @@ for i=1:(nsteps+1)
       SPL_ctr = SPL_ctr + int_val;
     end
     pd_vortex = SPL_ctr;
+    pd_vortex_v(i) = pd_vortex;
 
     % Total Noise
     SPL(i) = 10*log10(pd_rot + pd_vortex);
 end
 SPL_max = max(SPL) % (dB)
+pd_rot_max = 10*log10(max(pd_rot_v)) % (dB)
+pd_vortex_max = 10*log10(max(pd_vortex_v)) % (dB)
