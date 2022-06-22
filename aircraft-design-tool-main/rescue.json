@@ -382,7 +382,7 @@
                 "radius": 1,
                 "rotor_solidity": 0.34,
                 "induced_power_factor": 1.15,
-                "base_drag_coefficient": 0.02,
+                "base_drag_coefficient": 0.0051,
                 "tip_velocity": 133.795,
                 "efficiency": 0.8,
                 "mass": 35
