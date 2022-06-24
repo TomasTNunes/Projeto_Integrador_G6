@@ -50,7 +50,7 @@ Y = [Y(1),data_Y_corr(2),data_Y_corr(3),Y(2:end)];
 Z = [Z(1),-data_Z_corr(2),-data_Z_corr(3),Z(2:end)];
 
 % Plot geometric Centers of components
-plot_centers(X,Y,Z,comp)
+%plot_centers(X,Y,Z,comp)
 
 clearvars -except X Y Z comp jname
 
@@ -65,8 +65,6 @@ data.vehicle = aero_analysis(data.mission, data.vehicle);
 [data.mission, data.vehicle] = mass_analysis(data.mission, data.vehicle, data.energy);
 
 % Get mass for each component
-num_fuelt = strcmp(jname, 'Fuel Tank');
-num_fuelt = length(num_fuelt(num_fuelt==1));
 comp_mass(1) = 0;
 for i=2:length(jname)
     clear elem id
@@ -79,7 +77,7 @@ for i=2:length(jname)
         clear jname_t1 jname_t2 elem1 elem2 id1 id2
     elseif strcmp(jname{i}, 'Fuel Tank')
         [elem, id] = find_by_name(data.vehicle.components, jname{i});
-        comp_mass(i) = elem.mass * (1 + elem.reserve) / num_fuelt;
+        comp_mass(i) = elem.mass * (1 + elem.reserve);
     elseif strcmp(jname{i}, 'Battery')
         [elem, id] = find_by_name(data.vehicle.components, jname{i});
         comp_mass(i) = elem.mass * (1 + elem.reserve);
@@ -98,9 +96,9 @@ end
 Total_mass = sum(comp_mass(2:end));
 
 % calculate Center of Mass
-X_CG = sum(X(2:end).*comp_mass(2:end)) / Total_mass;
-Y_CG = sum(Y(2:end).*comp_mass(2:end)) / Total_mass;
-Z_CG = sum(Z(2:end).*comp_mass(2:end)) / Total_mass;
+X_CG = sum(X(2:end).*comp_mass(2:end)) / Total_mass
+Y_CG = sum(Y(2:end).*comp_mass(2:end)) / Total_mass
+Z_CG = sum(Z(2:end).*comp_mass(2:end)) / Total_mass
 
 % Plot geometric Centers of components and Center of Mass
 X_aux = X;
@@ -115,3 +113,38 @@ plot_centers(X_aux,Y_aux,Z_aux,comp_aux)
 
 % XFLR-5 frame
 pos_xflr5 = [-X' Y' -Z'];
+
+%% Vertical Stability
+mission = data.mission;
+vehicle = data.vehicle;
+energy = data.energy;
+
+% Get parameters
+MTOM = vehicle.mass;
+Vtip = vehicle.components{12, 1}.tip_velocity; % Rotor = Propeller
+r_rot = vehicle.components{12, 1}.radius; % Rotor = Propeller
+ki = vehicle.components{12, 1}.induced_power_factor; % Rotor induced power factor
+cd0 = vehicle.components{12, 1}.base_drag_coefficient; % Rotor base drag coefficient
+s = vehicle.components{12, 1}.rotor_solidity; % Rotor solidity (-)
+rho_vtol = mission.segments{3, 1}.density; % h=150m
+NR = vehicle.components{12, 1}.number; % Number of Rotors
+[~, DL, ~, ~] = calculates_loadings(mission, vehicle, energy); % (N/m^2) Disk loading
+Vy = mission.segments{2, 1}.velocity; % Vertical Climb velocity
+
+% Required Thrust for Hover and Vertcical Climb
+Tr = MTOM*constants.g; % Thrust in hover (N)
+
+% Compute Rotors Thrust so that X_CG = X of the center of Forces from rotor
+xa = pos_xflr5(4,1); % x position of wing rotors
+xc = pos_xflr5(6,1); % x position of tail rotors
+Tc = @(Ta) (Tr-2*Ta)/2; % Ta -> Thrust in one wing rotor & Tc -> Thrust in one tail rotor
+M = @(Ta) (xc+X_CG)*Tc(Ta)*2 - (-X_CG-xa)*Ta*2; % Torque in CG
+options = optimset('Display','off');
+Ta = fsolve(M,Tr/4,options) % Solve M=0 in order to Ta (Thrust in one wing rotor) (N)
+Tc = Tc(Ta) %Thrust in one tail rotor (N)
+
+% Verify if these Thrusts are within Power Limits of eletric motor
+Phra = Ta*(ki*sqrt(DL/(2*rho_vtol)) + (rho_vtol*Vtip*Vtip*Vtip/DL)*(s*cd0/8)) % Hover power in one wing rotor (W)
+Pclra = Ta*(Vy - ki*Vy/2 + ki*0.5*sqrt(Vy*Vy + 2*DL/rho_vtol) + ((rho_vtol*Vtip*Vtip*Vtip)/DL)*(s*cd0/8)) % Power in vertical climb in one wing rotor (W)
+Phrc = Tc*(ki*sqrt(DL/(2*rho_vtol)) + (rho_vtol*Vtip*Vtip*Vtip/DL)*(s*cd0/8)) % Hover power in one tail rotor (W)
+Pclrc = Tc*(Vy - ki*Vy/2 + ki*0.5*sqrt(Vy*Vy + 2*DL/rho_vtol) + ((rho_vtol*Vtip*Vtip*Vtip)/DL)*(s*cd0/8)) % Power in vertical climb in one tail rotor (W)

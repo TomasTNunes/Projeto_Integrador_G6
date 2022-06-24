@@ -31,7 +31,7 @@ Th = vehicle.mass * constants.g; % Thrust in hover (N)
 Thr = Th / NR; % Thrust in hover per rotor (N) - Assumption: all rotors contribute equally to the total thrust
 ki = vehicle.components{12, 1}.induced_power_factor; % Rotor induced power factor
 [~, DL, ~, ~] = calculates_loadings(mission, vehicle, energy); % (N/m^2) Disk loading
-rho = mission.segments{6, 1}.density; % Air Density (kg/m3) - SL, ISA + 20ºC conditions [Cruise, mas a altura do cruise e baixa 700m]
+rho = mission.segments{3, 1}.density; % Air Density (kg/m3) - SL, ISA + 20ºC conditions [Hover, h=150m]
 s = vehicle.components{12, 1}.rotor_solidity; % Rotor solidity (-)
 cd0 = vehicle.components{12, 1}.base_drag_coefficient; % Rotor base drag coefficient
 Phr = Thr*(ki*sqrt(DL/(2*rho)) + (rho*Vtip*Vtip*Vtip/DL)*(s*cd0/8)); % Hover power per rotor (W)
