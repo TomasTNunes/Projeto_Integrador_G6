@@ -5,7 +5,8 @@ addpath('../aircraft-design-tool-main')
 
 %% Read Excel
 % Excel Name
-filename = 'Centros_Geometricos.xlsx';
+% filename = 'Centros_Geometricos.xlsx';
+filename = 'Centros_Geometricos_estV.xlsx';
 
 % get parts names
 xlRange_comp = 'A2:A18';
@@ -58,7 +59,7 @@ clearvars -except X Y Z comp jname
 % Get data from json and algorithm
 global constants;
 constants.g = 9.81; % m/s^2
-data = load_project('rescue.json');
+data = load_project('rescue_estV.json'); % rescue/rescue_estV
 data.mission = build_mission(data.mission);
 data.vehicle = build_vehicle(data.mission, data.vehicle);
 data.vehicle = aero_analysis(data.mission, data.vehicle);
