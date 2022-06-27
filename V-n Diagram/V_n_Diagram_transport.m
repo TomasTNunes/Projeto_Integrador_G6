@@ -6,7 +6,7 @@ addpath('../aircraft-design-tool-main')
 % Get data from json and algorithm
 global constants;
 constants.g = 9.81; % m/s^2
-data = load_project('transport.json');
+data = load_project('transport_estV.json');
 data.mission = build_mission(data.mission);
 data.vehicle = build_vehicle(data.mission, data.vehicle);
 data.vehicle = aero_analysis(data.mission, data.vehicle);
